@@ -1,0 +1,76 @@
+.actors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* Actor card */
+.actor-card {
+    position: relative;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.actor-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Actor image wrapper */
+.actor-image {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    width: 100%;
+}
+
+.actor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay (same vibe as media-card) */
+.actor-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.85)
+    );
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.actor-card:hover .actor-overlay {
+    opacity: 1;
+}
+
+/* Actor info */
+.actor-info {
+    padding: 0.9rem;
+}
+
+.actor-info h3 {
+    font-size: 0.95rem;
+    color: white;
+    margin: 0;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+    .actor-info {
+        padding: 0.75rem;
+    }
+
+    .actor-info h3 {
+        font-size: 0.85rem;
+    }
+}

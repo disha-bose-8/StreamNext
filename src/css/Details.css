@@ -1,0 +1,35 @@
+.details-page {
+    display: flex;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.details-poster img {
+    width: 300px;
+    border-radius: 12px;
+}
+
+.details-info {
+    color: white;
+}
+
+.details-info h1 {
+    margin-bottom: 0.5rem;
+}
+
+.rating {
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+.overview {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.meta {
+    color: #aaa;
+    font-size: 0.9rem;
+}

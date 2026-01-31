@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../css/Home.css"
 
 function Home() {
     return (
@@ -6,7 +7,7 @@ function Home() {
             {/* Hero Section */}
             <section className="hero">
                 <h1>StreamNext</h1>
-                <p>Discover trending movies and TV series</p>
+                <p>Explore movies, series, and stars — all in one place</p>
             </section>
 
             {/* Navigation Cards */}
@@ -19,6 +20,11 @@ function Home() {
                 <Link to="/series" className="home-card">
                     <h2>📺 Series</h2>
                     <p>Explore popular TV shows and series</p>
+                </Link>
+
+                <Link to="/actors" className="home-card">
+                    <h2>⭐ Actors</h2>
+                    <p>Discover famous actors and their works</p>
                 </Link>
             </section>
         </div>

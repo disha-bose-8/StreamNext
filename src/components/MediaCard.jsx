@@ -1,5 +1,6 @@
 import "../css/MediaCard.css";
 import { useMediaContext } from "../contexts/MediaContext";
+import {Link} from "react-router-dom";
 
 function MediaCard({ media }) {
     const { isFavorite, addToFavorites, removeFromFavorites } = useMediaContext();
@@ -19,6 +20,7 @@ function MediaCard({ media }) {
     };
 
     return (
+        <Link to={`/details/${media.media_type}/${media.id}`}>
         <div className="media-card">
             <div className="media-poster">
                 <img
@@ -40,6 +42,7 @@ function MediaCard({ media }) {
                 <p>{year}</p>
             </div>
         </div>
+        </Link>
     );
 }
 
