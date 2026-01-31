@@ -4,13 +4,11 @@ import "../css/Home.css"
 function Home() {
     return (
         <div className="home">
-            {/* Hero Section */}
             <section className="hero">
                 <h1>StreamNext</h1>
                 <p>Explore movies, series, and stars — all in one place</p>
             </section>
 
-            {/* Navigation Cards */}
             <section className="home-nav">
                 <Link to="/movies" className="home-card">
                     <h2>🎬 Movies</h2>

@@ -13,7 +13,6 @@
     transform: translateY(-5px);
 }
 
-/* Poster */
 .media-poster {
     position: relative;
     aspect-ratio: 2 / 3;
@@ -46,7 +45,6 @@
     opacity: 1;
 }
 
-/* Favorite button */
 .favorite-btn {
     position: absolute;
     top: 1rem;
@@ -71,7 +69,6 @@
     color: #ff4757;
 }
 
-/* Info */
 .media-info {
     padding: 0.9rem;
     flex: 1;

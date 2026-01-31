@@ -33,3 +33,19 @@
     color: #aaa;
     font-size: 0.9rem;
 }
+
+@media (max-width: 768px) {
+    .details-page {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .details-poster img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .details-info {
+        text-align: center;
+    }
+}

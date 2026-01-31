@@ -8,7 +8,6 @@
     box-sizing: border-box;
 }
 
-/* Actor card */
 .actor-card {
     position: relative;
     background-color: #1a1a1a;
@@ -23,7 +22,6 @@
     transform: translateY(-5px);
 }
 
-/* Actor image wrapper */
 .actor-image {
     position: relative;
     aspect-ratio: 2 / 3;
@@ -36,7 +34,6 @@
     object-fit: cover;
 }
 
-/* Overlay (same vibe as media-card) */
 .actor-overlay {
     position: absolute;
     inset: 0;
@@ -64,7 +61,6 @@
     margin: 0;
 }
 
-/* Mobile tweaks */
 @media (max-width: 768px) {
     .actor-info {
         padding: 0.75rem;
