@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getActorDetails, getActorCredits } from "../services/api";
-import {Link} from "react-router-dom";
 import "../css/ActorDetails.css";
 import "../css/MediaCard.css"
+import MediaCard from "../components/MediaCard";
 
 function ActorDetails() {
     const { id } = useParams();
@@ -58,27 +58,14 @@ function ActorDetails() {
                 <h3>Known For</h3>
 
                 <div className="known-grid">
-                    {credits.slice(0, 8).map(item => (
-                        <Link
+                    {credits.map(item => (
+                        <MediaCard
                             key={item.id}
-                            to={`/details/${item.media_type}/${item.id}`}
-                            className="media-card"
-                        >
-                            <img
-                                src={
-                                    item.poster_path
-                                        ? `https://image.tmdb.org/t/p/w300${item.poster_path}`
-                                        : "https://via.placeholder.com/300x450?text=No+Image"
-                                }
-                                alt={item.title || item.name}
-                            />
-
-
-                        </Link>
-
+                            media={item}
+                        />
                     ))}
-
                 </div>
+
             </div>
 
         </div>
