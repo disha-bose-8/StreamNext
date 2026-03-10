@@ -1,6 +1,3 @@
-import { API_BASE } from "../api";
-import { getUserId } from "../utils/user";
-
 import { createContext, useState, useContext, useEffect } from "react";
 
 const MediaContext = createContext();
@@ -24,7 +21,7 @@ export const MediaProvider = ({ children }) => {
     }, [favorites]);
 
     // Add Media or series to favorites
-    const addToFavorites = async (item) => {
+    const addToFavorites = (item) => {
         setFavorites((prev) => {
             const alreadyExists = prev.some(
                 fav => fav.id === item.id && fav.media_type === item.media_type
@@ -34,27 +31,7 @@ export const MediaProvider = ({ children }) => {
 
             return [...prev, item];
         });
-
-        // 🔥 BACKEND PERSIST
-        try {
-            const userId = getUserId();
-
-            await fetch(`${API_BASE}/favourites`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    userId,
-                    itemId: item.id.toString(),
-                    title: item.title || item.name,
-                    mediaType: item.media_type,
-                    poster: item.poster_path
-                })
-            });
-        } catch (err) {
-            console.error("Failed to save favourite to backend", err);
-        }
     };
-
 
     // Remove Media or series from favorites
     const removeFromFavorites = (id, mediaType) => {
